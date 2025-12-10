@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful Business | Professional Web Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* --- COLOR PALETTE DEFINITION --- */
+        :root {
+            --color-primary: #001f3f;       /* Deep Navy Blue (Primary) */
+            --color-secondary: #ffc107;     /* Gold/Amber (Accent) */
+            --color-text: #333;
+            --color-light: #f8f8f8;
+            --color-white: #ffffff;
+        }
+
+        /* --- GLOBAL STYLES & RESET --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-light);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--color-primary);
+            line-height: 1.2;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* Base style for responsive images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- 1. NAVIGATION BAR --- */
+        .navbar {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky; /* Stays at the top when scrolling */
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--color-secondary); /* Gold Logo */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li a {
+            color: var(--color-white);
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .nav-links li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--color-secondary);
+        }
+
+
+        /* --- 2. HERO SECTION (The Professional Intro) --- */
+        .hero-section {
+            background-color: var(--color-primary); 
+            background-image: linear-gradient(rgba(0, 31, 63, 0.9), rgba(0, 31, 63, 0.9)), url('your_background_image.jpg'); /* Optional: Add an image here */
+            background-size: cover;
+            color: var(--color-white);
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            color: var(--color-white);
+            margin-bottom: 0.1em;
+        }
+
+        .business-tag {
+            font-size: 1.8em;
+            font-weight: 300;
+            margin-top: 0;
+            color: var(--color-secondary); /* Gold Accent */
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            padding: 15px 40px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .cta-button:hover {
+            background-color: #e0a800;
+        }
+
+        /* --- 3. STANDARD CONTENT SECTIONS --- */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+
+        /* --- EXPERTISE GRID --- */
+        .grid-3-col {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            flex: 1 1 300px; /* Base width for wrapping */
+            background-color: var(--color-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 3em;
+            color: var(--color-secondary);
+            margin-bottom: 15px;
+        }
+
+/* --- CSS for Responsive Video (16:9 Aspect Ratio) --- */
+
+.video-responsive-container {
+    position: relative;
+    width: 100%;
+    
+    /* Locks the aspect ratio (9 / 16 = 0.5625 = 56.25%) */
+    padding-bottom: 56.25%; 
+    
+    height: 0;
+    overflow: hidden; 
+    margin: 30px auto; 
+    max-width: 800px; /* Optional: Adjust this to your desired max width */
+}
+
+.video-responsive-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+        /* --- PORTFOLIO GRID --- */
+        .portfolio-section {
+            background-color: var(--color-light);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            background-color: #ddd; /* Placeholder color for project box */
+            height: 250px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+        }
+
+
+        /* --- CONTACT SECTION GRID --- */
+        .contact-section {
+            background-color: var(--color-white);
+        }
+
+        .contact-info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            flex: 1 1 300px; 
+        }
+
+        .contact-item i {
+            font-size: 2em;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: var(--color-primary);
+        }
+
+        /* WhatsApp Icon Specific Styling */
+        .whatsapp-icon {
+            color: #25D366 !important; 
+        }
+
+        /* --- 4. FOOTER --- */
+        .main-footer {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 40px 20px 10px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 20px;
+            gap: 30px;
+            text-align: left;
+        }
+
+        .footer-about, .footer-links, .footer-contact {
+            flex: 1 1 250px; /* Responsive footer columns */
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links a {
+            color: var(--color-light);
+            display: block;
+            padding: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        .footer-icon {
+            font-size: 1.8em;
+            color: #25D366;
+            margin-top: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- 5. RESPONSIVENESS ADJUSTMENTS (Mobile Fixes) --- */
+
+        @media (max-width: 768px) {
+            /* Navbar adjustment for mobile */
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                margin-top: 10px;
+                width: 100%;
+                justify-content: space-around;
+            }
+            
+            .nav-links li a {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+
+            /* Hero section adjustments */
+            .hero-section {
+                padding: 80px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2em;
+            }
+
+            .business-tag {
+                font-size: 1.2em;
+            }
+            
+            /* Footer stacking */
+            .footer-content {
+                text-align: center;
+                gap: 20px;
+            }
+            .footer-about, .footer-links, .footer-contact {
+                flex: 1 1 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Successful Business</div>
+        <ul class="nav-links">
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Ezumezu Success</h1>
+            <h2 class="business-tag">The Architect of Digital Excellence for Successful Business</h2>
+            <p class="tagline">
+                I transform ambitious concepts into robust, scalable, and stunning digital platforms. 
+                Whether commanding the field, mastering the mix, or crafting code — precision and performance define my work.
+            </p>
+            <a href="#contact" class="cta-button">Start Your Project</a>
+        </div>
+    </header>
+
+    <section id="expertise" class="section expertise-section">
+        <h2>My Professional Expertise</h2>
+        <div class="grid-3-col">
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive Design</h3>
+                <p>Websites engineered to adapt and perform flawlessly on every screen, from desktop to mobile.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>Clean Code Architecture</h3>
+                <p>Building maintainable and scalable solutions using modern HTML5, CSS3, and JavaScript standards.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-layer-group"></i>
+                <h3>Full Stack Development</h3>
+                <p>Proficiency across the entire stack, delivering comprehensive and end-to-end digital solutions.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section video-showcase">
+    <h2>My Professional Demo Reel</h2>
+    
+    <div class="video-responsive-container">
+        
+        <video width="100%" height="auto" controls>
+            
+            <source src="c.mp4" type="video/mp4">
+            
+            Your browser does not support the video tag.
+        </video>
+        
+    </div>
+</section>
+    <section id="portfolio" class="section portfolio-section">
+        <h2>Select Portfolio Highlights</h2>
+        <p class="section-subtitle">A showcase of dedication and precision across various industries.</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">Project 1 Placeholder</div>
+            <div class="portfolio-item">Project 2 Placeholder</div>
+            <div class="portfolio-item">Project 3 Placeholder</div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <h3>Ready to Build Your Digital Future?</h3>
+        
+        <div class="contact-info-grid">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p>Phone (Best for Direct Inquiry)</p>
+                <p>+234 805 470 7603</p>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>Email (Detailed Consultation)</p>
+                <p><a href="mailto:ezumezusuccess@gmail.com">ezumezusuccess@gmail.com</a></p>
+            </div>
+            
+            <div class="contact-item social-link">
+                <a href="https://wa.me/2348054707603" target="_blank">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i>
+                    <p>Chat on WhatsApp (Quick Response)</p>
+                </a>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h4>Successful Business</h4>
+                <p>Driving professional web development with focus on performance, design, and client success.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Connect</h4>
+                <p>Email: ezumezusuccess@gmail.com</p>
+                <a href="https://wa.me/2348054707603" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp footer-icon"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Successful Business. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
